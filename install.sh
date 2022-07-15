@@ -20,6 +20,7 @@ if [ ! -z ${_BUILD_ARG_AZEXTENSION} ]; then
     tee /usr/azextension.sh > /dev/null \
     << EOF
     #!/bin/bash
+    echo ${NAMES}
     for i in "${NAMES[@]}"
     do
       echo "Installing $i"
