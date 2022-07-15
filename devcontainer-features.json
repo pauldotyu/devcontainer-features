@@ -6,8 +6,6 @@
             "options": {
                 "extension": {
                     "type": "string",
-                    "proposals": [ "containerapp", "containerapp-compose" ],
-                    "default": "containerapp-compose",
                     "description": "Enter the name of the Azure CLI extension you wish to add"
                 }
             },
