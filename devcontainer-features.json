@@ -1,27 +1,14 @@
 {
     "features": [
         {
-            "id": "helloworld",
-            "name": "My First Feature",
+            "id": "extension",
+            "name": "Azure CLI extension name",
             "options": {
-                "greeting": {
+                "extension": {
                     "type": "string",
-                    "proposals": [ "hey", "hello", "hi", "howdy" ],
-                    "default": "hey",
-                    "description": "Select a pre-made greeting, or enter your own"
-                }
-            },
-            "include": ["ubuntu"]
-        },
-        {
-            "id": "color",
-            "name": "A feature to remind you of your favorite color",
-            "options": {
-                "favorite": {
-                    "type": "string",
-                    "enum": [ "red", "gold", "green" ],
-                    "default": "red",
-                    "description": "Choose your favorite color."
+                    "proposals": [ "containerapp", "containerapp-compose" ],
+                    "default": "containerapp-compose",
+                    "description": "Enter the name of the Azure CLI extension you wish to add"
                 }
             },
             "include": ["ubuntu"]
