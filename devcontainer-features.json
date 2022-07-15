@@ -4,9 +4,9 @@
             "id": "azextension",
             "name": "Azure CLI extension name",
             "options": {
-                "name": {
-                    "type": "string",
-                    "description": "Enter the name of the Azure CLI extension you wish to add"
+                "names": {
+                    "type": "array",
+                    "description": "Enter the names of the Azure CLI extension you wish to add"
                 }
             },
             "include": ["ubuntu"]
