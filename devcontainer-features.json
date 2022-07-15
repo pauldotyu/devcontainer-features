@@ -1,7 +1,7 @@
 {
     "features": [
         {
-            "id": "extension",
+            "id": "azextension",
             "name": "Azure CLI extension name",
             "options": {
                 "name": {
