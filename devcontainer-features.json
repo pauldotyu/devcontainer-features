@@ -4,7 +4,7 @@
             "id": "extension",
             "name": "Azure CLI extension name",
             "options": {
-                "extension": {
+                "name": {
                     "type": "string",
                     "description": "Enter the name of the Azure CLI extension you wish to add"
                 }
