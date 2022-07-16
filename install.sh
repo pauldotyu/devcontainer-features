@@ -18,8 +18,7 @@ if [ ! -z ${_BUILD_ARG_AZEXTENSION} ]; then
     names=(`echo ${NAMES} | tr ',' ' '`)
     for i in "${names[@]}"
     do
-        printf "Installing ${i}\n"
-        az extension add --name ${i} -y
+        echo "Installing ${i}\n"
+        su vscode -c 'az extension add --name ${i} -y'
     done
-    az extension list
 fi
