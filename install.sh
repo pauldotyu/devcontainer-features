@@ -15,8 +15,12 @@ if [ ! -z ${_BUILD_ARG_AZEXTENSION} ]; then
     NAMES="${_BUILD_ARG_AZEXTENSION_NAMES}"
     
     echo "Installing Azure CLI extensions: ${NAMES}"
-    names=(`echo ${NAMES} | tr ',' ' '`)    
-    az extension add --name containerapp -y
-    az extension add --name containerapp-compose -y
+    names=(`echo ${NAMES} | tr ',' ' '`)
+    for i in "${names[@]}"
+    do
+        printf "Installing ${i}\n"
+        
+    az extension add --name ${i} -y
+    done
     az extension list
 fi
