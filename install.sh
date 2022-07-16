@@ -15,7 +15,7 @@ if [ ! -z ${_BUILD_ARG_AZEXTENSION} ]; then
     echo "Installing Azure CLI extensions: ${_BUILD_ARG_AZEXTENSION_NAMES}"
     # Build args are exposed to this entire feature set following the pattern:  _BUILD_ARG_<FEATURE ID>_<OPTION NAME>
 
-    my_arr=($(echo ${_BUILD_ARG_AZEXTENSION_NAMES} | tr "," "\n"))
+    my_arr=($(echo "${_BUILD_ARG_AZEXTENSION_NAMES}" | tr "," "\n"))
 
     tee /usr/azextension.sh > /dev/null \
     << EOF
