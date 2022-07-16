@@ -15,22 +15,8 @@ if [ ! -z ${_BUILD_ARG_AZEXTENSION} ]; then
     NAMES="${_BUILD_ARG_AZEXTENSION_NAMES}"
     
     echo "Installing Azure CLI extensions: ${NAMES}"
-    names=(`echo ${NAMES} | tr ',' ' '`)
-
-    tee /usr/azextension.sh > /dev/null \
-    << EOF
-    #!/bin/bash
-    
-    for i in "${names[@]}"
-    do
-      printf "${i}\n"
-      az extension add --name ${i} -y
-    done
-    
+    names=(`echo ${NAMES} | tr ',' ' '`)    
+    az extension add --name containerapp -y
+    az extension add --name containerapp-compose -y
     az extension list
-EOF
-
-    chmod +x /usr/azextension.sh
-    sudo cat '/usr/azextension.sh' > /usr/local/bin/azextension
-    sudo chmod +x /usr/local/bin/azextension
 fi
