@@ -10,19 +10,20 @@ set -a
 . ./devcontainer-features.env
 set +a
 
-
 if [ ! -z ${_BUILD_ARG_AZEXTENSION} ]; then
-    echo "Installing Azure CLI extensions: ${_BUILD_ARG_AZEXTENSION_NAMES}"
     # Build args are exposed to this entire feature set following the pattern:  _BUILD_ARG_<FEATURE ID>_<OPTION NAME>
-
-    IFS=',' read -ra my_array <<< "$_BUILD_ARG_AZEXTENSION_NAMES"
+    NAMES="${_BUILD_ARG_AZEXTENSION_NAMES}"
+    
+    echo "Installing Azure CLI extensions: ${NAMES}"
+    names=(`echo ${NAMES} | tr ',' ' '`)
 
     tee /usr/azextension.sh > /dev/null \
     << EOF
     #!/bin/bash
-    for i in "${my_array[@]}"
+    
+    for i in "${names[@]}"
     do
-      echo "Installing $i"
+      printf "${i}\n"
       az extension add --name ${i} -y
     done
     
